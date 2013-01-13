@@ -1,0 +1,62 @@
+@width: 700px;
+@height: 300px;
+
+@imagewidth: 500px;
+
+.bengal {
+	width: @width;
+	height: @height;
+	padding: 0;
+
+	position: relative;
+
+	li {
+		display: none;
+		position: absolute;
+
+		margin: 0;
+		padding: 0;
+
+		box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
+		z-index: 10;
+		opacity: .5;
+
+		top: 20px;
+		left: (@width - (500 - 40)) / 2;
+		bottom: 20px;
+		right: (@width - (500 - 40)) / 2;
+
+		img {
+			height: 100%;
+			width: 100%;
+		}
+
+		&.bengal-before {
+			display: block;
+
+			left: 0;
+			right: @width - (500 - 40);
+		}
+
+		&.bengal-after {
+			display: block;
+
+			left: @width - (500 - 40);
+			right: 0;
+		}
+
+		&.bengal-active {
+			z-index: 20;
+			opacity: 1;
+
+			display: block;
+
+			top: 0;
+			left: (@width - @imagewidth) / 2;
+			bottom: 0;
+			right: (@width - @imagewidth) / 2;
+
+		}
+	}
+}
